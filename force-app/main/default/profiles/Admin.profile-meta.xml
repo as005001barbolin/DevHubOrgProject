@@ -6,6 +6,10 @@
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>ForResViewCont</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>RESTSec13Prac2</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -44,6 +48,10 @@
         <object>Resource__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <pageAccesses>
+        <apexPage>Resource_view</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <tabVisibilities>
         <tab>Resource__c</tab>
         <visibility>DefaultOn</visibility>

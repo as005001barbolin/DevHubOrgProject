@@ -1,10 +1,48 @@
-<apex:page >
-    <h1>Congratulations</h1>
-    <apex:form>
-        <apex:pageBlock>
-            <apex:pageBlockSection>
-                
-            </apex:pageBlockSection>
-        </apex:pageBlock>
-    </apex:form>
+<apex:page controller="ForResViewCont" lightningStylesheets="true">
+<apex:slds />
+  <h1>Congratulations</h1>
+  <apex:pageBlock >
+  
+      <apex:pageBlockSection >
+          <apex:form >
+              <script>
+                  function fireSoql() {
+                      let listValue = document.getElementById("j_id0:j_id3:j_id4:j_id5:list").value;
+                      console.log('value is: ' + listValue);
+                      console.log(document.getElementById("j_id0:j_id3:j_id10:theTable").value );
+                      changeRes(listValue);
+                  }
+                  
+              </script>
+              
+              <apex:actionFunction name="changeRes" action="{!changeResources}" 
+                                   reRender="theTable">
+                  <apex:param name="listValue" value="{!listValue}" assignTo="{!listValue}"/>
+              </apex:actionFunction>
+              
+              <apex:selectList id="list" multiselect="false" size="1" onchange="fireSoql()">
+                  <apex:selectOptions value="{!options}"/>
+              </apex:selectList>
+              
+          </apex:form>
+      </apex:pageBlockSection>
+      
+      <apex:pageBlockSection >
+          <apex:dataTable value="{!resources}" var="resource" id="theTable"
+              rowClasses="odd,even" styleClass="tableClass">
+              <apex:facet name="caption">Resources</apex:facet>
+        
+              <apex:column >
+                  <apex:facet name="header">Id</apex:facet>
+                  <apex:outputText value="{!resource.Id}"/>
+              </apex:column>
+        
+              <apex:column >
+                  <apex:facet name="header">Name</apex:facet>
+                  <apex:outputText value="{!resource.name}"/>
+              </apex:column>
+    
+        </apex:dataTable>
+      </apex:pageBlockSection>
+  </apex:pageBlock>
 </apex:page>
