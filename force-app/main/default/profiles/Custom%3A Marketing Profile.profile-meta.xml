@@ -16,6 +16,11 @@
     <custom>true</custom>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.Responsibility__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Resource__c.Model__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -24,6 +29,9 @@
         <field>Resource__c.Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <layoutAssignments>
+        <layout>Contact-Contact %28Marketing%29 Layout</layout>
+    </layoutAssignments>
     <layoutAssignments>
         <layout>Resource__c-Resource Layout</layout>
     </layoutAssignments>
