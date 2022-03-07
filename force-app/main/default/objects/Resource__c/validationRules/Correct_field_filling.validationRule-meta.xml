@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Correct_field_filling</fullName>
+    <active>true</active>
+    <description>Can&apos;t create new record if types Equipment / Car selected and field Model is empty</description>
+    <errorConditionFormula>OR( ISPICKVAL( Type__c , &quot;Car&quot;), ISPICKVAL( Type__c , &quot;Equipment&quot;), ISBLANK( Model__c ) )</errorConditionFormula>
+    <errorMessage>Select correct type / Fill the model field</errorMessage>
+</ValidationRule>
